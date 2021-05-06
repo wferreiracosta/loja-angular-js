@@ -6,9 +6,16 @@
   "scripts": {
     "start": "json-server --watch db.json --port 3001"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wferreiracosta/loja-angular-js.git"
+  },
+  "author": "Wesley Costa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wferreiracosta/loja-angular-js/issues"
+  },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "json-server": "^0.16.3"
   }
