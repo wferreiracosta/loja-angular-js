@@ -10,7 +10,7 @@ import { environment } from "../../../environments/environment";
 })
 export class ProductService {
 
-  baseUrl = environment.api+"/products";
+  url = environment.api+"/products";
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 
@@ -23,11 +23,19 @@ export class ProductService {
   }
 
   create(product: Product): Observable<Product> {
-    return this.http.post<Product>(this.baseUrl, product);
+    return this.http.post<Product>(this.url, product);
   }
 
   read(): Observable<Product[]>{
-    return this.http.get<Product[]>(this.baseUrl);
+    return this.http.get<Product[]>(this.url);
+  }
+
+  readById(id: string): Observable<Product> {
+    return this.http.get<Product>(this.url+`/${id}`);
+  }
+
+  update(product: Product): Observable<Product>{
+    return this.http.put<Product>(this.url+`/${product.id}`, product);
   }
 
 }
